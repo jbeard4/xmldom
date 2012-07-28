@@ -1073,11 +1073,12 @@ if(Object.defineProperty){
 			switch(this.nodeType){
 			case 1:
 			case 11:
-				var c = node.firstChild;
+				var c = this.firstChild;
 				while(c){
-					node.removeChild(c)
+					this.removeChild(c)
 					c = c.nextSibling;
 				}
+                this.appendChild(this.ownerDocument.createTextNode(data));
 				return ;
 			default:
 				//TODO:
